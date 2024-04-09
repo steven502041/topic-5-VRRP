@@ -4,7 +4,7 @@ Keepalived使用VRRP（Virtual Router Redundancy Protocol）協定來實現故�
 
 當Nginx和Keepalived結合在一起時，常見的架構是將多個Nginx伺服器配置為一個群集，**共享相同的虛擬IP地址**。Keepalived在這些Nginx伺服器之間進行健康檢查，監測主要伺服器的可用性。如果主要伺服器失效，Keepalived會將虛擬IP地址轉移到另一個正常運行的Nginx伺服器，以確保持續的服務可用性。這樣的架構提供了高可用性和負載平衡，以防止單點故障和分散流量。
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a83231dc-b58c-46fe-95e6-5ae2937bee18/Untitled.png)
+![image](https://github.com/steven502041/topic-5-VRRP/blob/main/img/1.png)
 
 ## 實作
 
