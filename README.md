@@ -1,8 +1,10 @@
+## 何謂Keepalived
+
 Keepalived使用VRRP（Virtual Router Redundancy Protocol）協定來實現故障轉移，該協定**允許多個伺服器共享相同的虛擬IP地址**，當主要伺服器失效時，其他伺服器可以接管該IP地址並提供服務。
 
 當Nginx和Keepalived結合在一起時，常見的架構是將多個Nginx伺服器配置為一個群集，**共享相同的虛擬IP地址**。Keepalived在這些Nginx伺服器之間進行健康檢查，監測主要伺服器的可用性。如果主要伺服器失效，Keepalived會將虛擬IP地址轉移到另一個正常運行的Nginx伺服器，以確保持續的服務可用性。這樣的架構提供了高可用性和負載平衡，以防止單點故障和分散流量。
 
-
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a83231dc-b58c-46fe-95e6-5ae2937bee18/Untitled.png)
 
 ## 實作
 
@@ -49,7 +51,7 @@ $ ip a
 ### 2.在所有架設nginx伺服器上，安裝Keepalived
 
 ```yaml
-sudo apt install -y install keepalived
+sudo yum -y install keepalived
 ```
 
 ### 3.配置Keepalived文件( **`/etc/keepalived/keepalived.conf`  )**
